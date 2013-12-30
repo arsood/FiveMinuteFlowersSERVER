@@ -69,4 +69,25 @@ while ($browser = mysql_fetch_array($browse_image_process)) {
 
 <?php } } ?>
 
+<?php
+
+### Get saved recipients ###
+
+if (isset($_POST["method"]) && $_POST["method"] == "read") {
+	if ($_POST["action"] == "get-recipients") {
+		$user_id = mysql_real_escape_string($_POST["uuid"]);
+		$recipient_query = "SELECT * FROM saved_delivery WHERE uuid = '{$user_id}'";
+		$recipient_process = mysql_query($recipient_query);
+?>
+
+<ul class="recipient-list" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search For Names">
+    
+<?php while ($recipients = mysql_fetch_array($recipient_process)) { ?>
+    <li><a href="#" onClick="setRec('<?php echo $recipients["delivery_first_name"]." ".$recipients["delivery_last_name"]; ?>');"><?php echo $recipients["delivery_first_name"]." ".$recipients["delivery_last_name"]; ?></a></li>
+<?php } //Close while loop ?>
+
+</ul>
+
+<?php } /*Close condition that if action equals get-recipients*/ } /*Close condition that method has to be read*/ ?>
+
 
