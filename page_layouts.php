@@ -80,7 +80,9 @@ if (isset($_POST["method"]) && $_POST["method"] == "read") {
 		$recipient_process = mysql_query($recipient_query);
 ?>
 
+<?php if (mysql_num_rows($recipient_process) > 0) { ?>
 <ul class="recipient-list" data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Search For Names">
+<?php } ?>
     
 <?php while ($recipients = mysql_fetch_array($recipient_process)) { ?>
     <li><a href="#" onClick="setRec('<?php echo $recipients["delivery_first_name"]." ".$recipients["delivery_last_name"]; ?>');"><?php echo $recipients["delivery_first_name"]." ".$recipients["delivery_last_name"]; ?></a></li>
