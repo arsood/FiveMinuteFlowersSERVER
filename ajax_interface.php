@@ -119,3 +119,45 @@ if (isset($_POST["action"]) && $_POST["action"] == "read" && $_POST["pageLayout"
 }
 
 ?>
+
+<?php
+
+### Remove saved recipient ###
+
+if (isset($_POST["method"]) && $_POST["method"] == "write" && $_POST["action"] == "remove-recipient") {
+	$user_id = mysql_real_escape_string($_POST["userUuid"]);
+	$rec_id = mysql_real_escape_string($_POST["recId"]);
+	
+	$check_query = "SELECT * FROM saved_delivery WHERE uuid = '{$user_id}' AND id = '{$rec_id}'";
+	$check_process = mysql_query($check_query);
+	
+	if (mysql_num_rows($check_process) == 1) {
+		$delete_query = "DELETE FROM saved_delivery WHERE id = '{$rec_id}'";
+		mysql_query($delete_query);
+	} else {
+		echo "none";
+	}
+}
+
+?>
+
+<?php
+
+### Remove saved billing ###
+
+if (isset($_POST["method"]) && $_POST["method"] == "write" && $_POST["action"] == "remove-billing") {
+	$user_id = mysql_real_escape_string($_POST["userUuid"]);
+	$bill_id = mysql_real_escape_string($_POST["billId"]);
+	
+	$check_query = "SELECT * FROM saved_billing WHERE uuid = '{$user_id}' AND id = '{$bill_id}'";
+	$check_process = mysql_query($check_query);
+	
+	if (mysql_num_rows($check_process) == 1) {
+		$delete_query = "DELETE FROM saved_billing WHERE id = '{$bill_id}'";
+		mysql_query($delete_query);
+	} else {
+		echo "none";
+	}
+}
+
+?>

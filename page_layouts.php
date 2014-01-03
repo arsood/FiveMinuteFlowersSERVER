@@ -71,7 +71,7 @@ while ($browser = mysql_fetch_array($browse_image_process)) {
 
 <?php
 
-### Get saved recipients ###
+### Get saved recipients for wizard page ###
 
 if (isset($_POST["method"]) && $_POST["method"] == "read") {
 	if ($_POST["action"] == "get-recipients") {
@@ -87,6 +87,58 @@ if (isset($_POST["method"]) && $_POST["method"] == "read") {
 <?php while ($recipients = mysql_fetch_array($recipient_process)) { ?>
     <li><a href="#" onClick="setRec('<?php echo $recipients["delivery_first_name"]." ".$recipients["delivery_last_name"]; ?>');"><?php echo $recipients["delivery_first_name"]." ".$recipients["delivery_last_name"]; ?></a></li>
 <?php } //Close while loop ?>
+
+</ul>
+
+<?php } /*Close condition that if action equals get-recipients*/ } /*Close condition that method has to be read*/ ?>
+
+<?php
+
+### Get saved recipients for account page ###
+
+if (isset($_POST["method"]) && $_POST["method"] == "read") {
+	if ($_POST["action"] == "get-account-recipients") {
+		$user_id = mysql_real_escape_string($_POST["uuid"]);
+		$recipient_query = "SELECT * FROM saved_delivery WHERE uuid = '{$user_id}'";
+		$recipient_process = mysql_query($recipient_query);
+?>
+
+<?php if (mysql_num_rows($recipient_process) > 0) { ?>
+<ul data-role="listview" data-inset="true" data-theme="c">
+<li data-role="list-divider" data-theme="b">
+    Saved Recipients (tap to remove)
+</li>
+<?php } ?>
+
+<?php while ($recipients = mysql_fetch_array($recipient_process)) { ?>
+<li id="saved-rec-<?php echo $recipients['id']; ?>"><a href="#" onClick="removeRec('<?php echo $recipients['id']; ?>');"><?php echo $recipients["delivery_first_name"]." ".$recipients["delivery_last_name"]; ?></a></li>
+<?php } ?>
+
+</ul>
+
+<?php } /*Close condition that if action equals get-recipients*/ } /*Close condition that method has to be read*/ ?>
+
+<?php
+
+### Get saved billing for account page ###
+
+if (isset($_POST["method"]) && $_POST["method"] == "read") {
+	if ($_POST["action"] == "get-account-billing") {
+		$user_id = mysql_real_escape_string($_POST["uuid"]);
+		$billing_query = "SELECT * FROM saved_billing WHERE uuid = '{$user_id}'";
+		$billing_process = mysql_query($billing_query);
+?>
+
+<?php if (mysql_num_rows($billing_process) > 0) { ?>
+<ul data-role="listview" data-inset="true" data-theme="c">
+<li data-role="list-divider" data-theme="e">
+    Saved Billing Information (tap to remove)
+</li>
+<?php } ?>
+
+<?php while ($billings = mysql_fetch_array($billing_process)) { ?>
+<li id="saved-bill-<?php echo $billings['id']; ?>"><a href="#" onClick="removeBill('<?php echo $billings['id']; ?>');"><?php echo $billings["billing_address_1"].", ".$billings["billing_city"].", ".$billings["billing_state"]; ?></a></li>
+<?php } ?>
 
 </ul>
 
