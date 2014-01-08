@@ -4,6 +4,8 @@
 
 $path_to_flowers = "img/flowers/";
 
+$current_month = date("m", time());
+
 ?>
 
 <?php 
@@ -53,10 +55,14 @@ $i++;
 
 if ($_GET["action"] == "read" && $_GET["page-layout"] == "browse-images") {
 	
-$browse_image_query = "SELECT * FROM flower_inventory WHERE occasion = '{$_GET['category']}'";
+$browse_image_query = "SELECT * FROM flower_inventory WHERE occasion = '{$_GET['category']}' ORDER BY retail_price DESC";
 $browse_image_process = mysql_query($browse_image_query);
 
 while ($browser = mysql_fetch_array($browse_image_process)) {
+
+$avail = explode("+", $browser["avail"]);
+
+if (in_array($current_month, $avail) || $browser["avail"] == "all") {
 
 ?>
 
@@ -67,7 +73,7 @@ while ($browser = mysql_fetch_array($browse_image_process)) {
     <a onClick="setSpecificFlower(<?php echo "'".$browser["arrangement_code"]."'"; ?>);"><img src="<?php echo $path_to_flowers.$browser["arrangement_code"]."_low.jpg"; ?>" /></a>
 </div>
 
-<?php } } ?>
+<?php } } } ?>
 
 <?php
 

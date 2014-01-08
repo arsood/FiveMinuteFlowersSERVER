@@ -2,6 +2,8 @@
 
 #Here is all the code that will output back to our HTML
 
+$current_month = date("m", time());
+
 //Get specific flower information
 
 if (isset($_GET["action"]) && $_GET["action"] == "get-flower-info") {
@@ -55,7 +57,11 @@ if (isset($_POST["getAction"]) && $_POST["getAction"] == "get-personalized-array
 	$personalized_process = mysql_query($personalized_query);
 	
 	while ($personal = mysql_fetch_assoc($personalized_process)) {
-		$personalized_array[] = $personal;
+		$avail = explode("+", $personal["avail"]);
+		
+		if (in_array($current_month, $avail) || $personal["avail"] == "all") {
+			$personalized_array[] = $personal;
+		}
 	}
 	
 	if (isset($personalized_array)) {
