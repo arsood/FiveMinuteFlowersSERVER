@@ -55,7 +55,7 @@ $i++;
 
 if ($_GET["action"] == "read" && $_GET["page-layout"] == "browse-images") {
 	
-$browse_image_query = "SELECT * FROM flower_inventory WHERE occasion = '{$_GET['category']}' ORDER BY retail_price DESC";
+$browse_image_query = "SELECT * FROM flower_inventory WHERE occasion = '{$_GET['category']}' ORDER BY retail_price ASC";
 $browse_image_process = mysql_query($browse_image_query);
 
 while ($browser = mysql_fetch_array($browse_image_process)) {
