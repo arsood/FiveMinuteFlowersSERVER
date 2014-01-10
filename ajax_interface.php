@@ -167,3 +167,38 @@ if (isset($_POST["method"]) && $_POST["method"] == "write" && $_POST["action"] =
 }
 
 ?>
+
+<?php
+
+### Check if user has a login ###
+
+if (isset($_POST["method"]) && $_POST["method"] == "read" && $_POST["action"] == "check-login") {
+	$user_id = mysql_real_escape_string($_POST["userUuid"]);
+	
+	$check_query = "SELECT * FROM user_info WHERE uuid = '{$user_id}'";
+	$check_process = mysql_query($check_query);
+	
+	if (mysql_num_rows($check_process) == 1) {
+		echo "yes";
+	} else {
+		echo "no";
+	}
+}
+
+?>
+
+<?php
+
+### Create new user account ###
+
+if (isset($_POST["method"]) && $_POST["method"] == "write" && $_POST["action"] == "create-new-user") {
+	$user_id = mysql_real_escape_string($_POST["userUuid"]);
+	$user_email = mysql_real_escape_string($_POST["userEmail"]);
+	
+	$insert_query = "INSERT INTO user_info (uuid, email) VALUES ('{$user_id}', '{$user_email}')";
+	mysql_query($insert_query);
+	
+	echo "ok";
+}
+
+?>

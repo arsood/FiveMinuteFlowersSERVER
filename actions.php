@@ -24,7 +24,7 @@ $personal_message = mysql_real_escape_string($_POST["personalMessage"]);
 
 //Make the insert chu chi
 
-$insert_query = "INSERT INTO flower_orders (uuid, billing_first_name, billing_last_name, billing_address_1, billing_address_2, billing_city, billing_state, billing_zipcode, delivery_first_name, delivery_last_name, delivery_address_1, delivery_address_2, delivery_city, delivery_state, delivery_zipcode, payment_token, order_status) VALUES ('{$user_id}', '{$billing_first_name}', '{$billing_last_name}', '{$billing_address_1}', '{$billing_address_2}', '{$billing_city}', '{$billing_state}', '{$billing_zipcode}', '{$delivery_first_name}', '{$delivery_last_name}', '{$delivery_address_1}', '{$delivery_address_2}', '{$delivery_city}', '{$delivery_state}', '{$delivery_zipcode}', '{$payment_token}', '1')";
+$insert_query = "INSERT INTO flower_orders (uuid, billing_first_name, billing_last_name, billing_address_1, billing_address_2, billing_city, billing_state, billing_zipcode, delivery_first_name, delivery_last_name, delivery_address_1, delivery_address_2, delivery_city, delivery_state, delivery_zipcode, payment_token, payment_amount, order_status) VALUES ('{$user_id}', '{$billing_first_name}', '{$billing_last_name}', '{$billing_address_1}', '{$billing_address_2}', '{$billing_city}', '{$billing_state}', '{$billing_zipcode}', '{$delivery_first_name}', '{$delivery_last_name}', '{$delivery_address_1}', '{$delivery_address_2}', '{$delivery_city}', '{$delivery_state}', '{$delivery_zipcode}', '{$payment_token}', '{$arrangement_price}', '1')";
 mysql_query($insert_query);
 
 if ($_POST["saveBilling"] == "true") {
