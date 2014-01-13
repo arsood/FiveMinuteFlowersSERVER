@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Amino Admin Panel</title>
+
+<link rel="stylesheet" type="text/css" href="libraries/bootstrap-3.0.0/css/bootstrap.css" />
+<!--<link rel="stylesheet" type="text/css" href="libraries/bootstrap-3.0.0/buttons/buttons.css" />-->
+<link rel="stylesheet" type="text/css" href="libraries/font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="css/helpers.css" />
+<!--<link rel="stylesheet" type="text/css" href="css/fonts.css" />-->
+<link rel="stylesheet" type="text/css" href="css/admin.css" />
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-inverse no-rad">
+	<div class="navbar-header">
+    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".admin-navbar">
+        	<span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="admin-logo">
+        	<img src="img/logo_white.png" />
+        </div>
+    </div>
+    <div class="collapse navbar-collapse admin-navbar">
+    	<ul class="nav navbar-nav navbar-right">
+        	<li><button class="btn btn-view-over-the-town-3" style="margin-top:13px;">Logout</button></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container margin-top-30">
+	<h2 class="txt-center">Pending Orders</h2>
+    <table class="table-responsive admin-table margin-top-20">
+    	<thead>
+        	<tr>
+            	<td>Name</td>
+                <td>Email</td>
+                <td>Phone Number</td>
+                <td>Action</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+        	<tr id="summary12345">
+            	<td>Arun Sood</td>
+                <td>arsood@gmail.com</td>
+                <td>805-338-1903</td>
+                <td>
+                	<button class="btn btn-success order-accept">Accept</button>
+                    <button class="btn btn-danger margin-left-5 order-deny">Deny</button>
+                </td>
+                <td><i class="icon-arrow-down summary-arrow"></i></td>
+            </tr>
+            <tr id="detailed12345" style="display:none;">
+            	<td colspan="5">
+                	<table class="admin-detailed-table margin-top-10">
+                    	<thead>
+                        	<tr>
+                            	<td>Name</td>
+                                <td>Address 1</td>
+                                <td>Address 2</td>
+                                <td>City</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                            	<td>Arun Sood</td>
+                                <td>4389 Paseo de la Paz</td>
+                                <td>APT 159</td>
+                                <td>Newbury Park</td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                        	<tr>
+                            	<td>State</td>
+                                <td>Zipcode</td>
+                                <td>Country</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                            	<td>CA</td>
+                                <td>91320</td>
+                                <td>USA</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr id="summary123456">
+            	<td>Arun Sood</td>
+                <td>arsood@gmail.com</td>
+                <td>805-338-1903</td>
+                <td>
+                	<button class="btn btn-success order-accept">Accept</button>
+                    <button class="btn btn-danger margin-left-5 order-deny">Deny</button>
+                </td>
+                <td><i class="icon-arrow-down summary-arrow"></i></td>
+            </tr>
+            <tr id="detailed123456" style="display:none;">
+            	<td colspan="5">
+                	<table class="admin-detailed-table margin-top-10">
+                    	<thead>
+                        	<tr>
+                            	<td>Name</td>
+                                <td>Address 1</td>
+                                <td>Address 2</td>
+                                <td>City</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                            	<td>Arun Sood</td>
+                                <td>4389 Paseo de la Paz</td>
+                                <td>APT 159</td>
+                                <td>Newbury Park</td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                        	<tr>
+                            	<td>State</td>
+                                <td>Zipcode</td>
+                                <td>Country</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                            	<td>CA</td>
+                                <td>91320</td>
+                                <td>USA</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h2 class="txt-center" style="margin-top:50px;">Processed Orders</h2>
+    <table class="table-responsive admin-table margin-top-20">
+    	<thead>
+        	<tr>
+            	<td>Name</td>
+                <td>Email</td>
+                <td>Phone Number</td>
+                <td>Status</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+        	<tr id="summary1234567">
+            	<td>Arun Sood</td>
+                <td>arsood@gmail.com</td>
+                <td>805-338-1903</td>
+                <td>Accepted</td>
+                <td><i class="icon-arrow-down summary-arrow"></i></td>
+            </tr>
+            <tr id="detailed1234567" style="display:none;">
+            	<td colspan="5">
+                	<table class="admin-detailed-table margin-top-10">
+                    	<thead>
+                        	<tr>
+                            	<td>Name</td>
+                                <td>Address 1</td>
+                                <td>Address 2</td>
+                                <td>City</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                            	<td>Arun Sood</td>
+                                <td>4389 Paseo de la Paz</td>
+                                <td>APT 159</td>
+                                <td>Newbury Park</td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                        	<tr>
+                            	<td>State</td>
+                                <td>Zipcode</td>
+                                <td>Country</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                            	<td>CA</td>
+                                <td>91320</td>
+                                <td>USA</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr id="summary12345678">
+            	<td>Arun Sood</td>
+                <td>arsood@gmail.com</td>
+                <td>805-338-1903</td>
+                <td>Denied</td>
+                <td><i class="icon-arrow-down summary-arrow"></i></td>
+            </tr>
+            <tr id="detailed12345678" style="display:none;">
+            	<td colspan="5">
+                	<table class="admin-detailed-table margin-top-10">
+                    	<thead>
+                        	<tr>
+                            	<td>Name</td>
+                                <td>Address 1</td>
+                                <td>Address 2</td>
+                                <td>City</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                            	<td>Arun Sood</td>
+                                <td>4389 Paseo de la Paz</td>
+                                <td>APT 159</td>
+                                <td>Newbury Park</td>
+                            </tr>
+                        </tbody>
+                        <thead>
+                        	<tr>
+                            	<td>State</td>
+                                <td>Zipcode</td>
+                                <td>Country</td>
+                                <td></td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                            	<td>CA</td>
+                                <td>91320</td>
+                                <td>USA</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!--Accept Modal-->
+<div class="modal fade accept-modal" id="modal-accept" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Accept Confirmation</h4>
+			</div>
+			<div class="modal-body">
+				Are you sure you want to accept this order and charge the customer?
+			</div>
+			<div class="modal-footer">
+				<button id="accept-order-button" type="button" class="btn btn-success">Ok</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <input id="accept-hidden" type="hidden" name="order-number" value="" />
+			</div>
+		</div>
+	</div>
+</div>
+<!--/Accept Modal-->
+
+<!--Deny Modal-->
+<div class="modal fade deny-modal" id="modal-deny" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Deny Confirmation</h4>
+			</div>
+			<div class="modal-body">
+				Are you sure you want to deny this order and refund the customer?
+			</div>
+			<div class="modal-footer">
+				<button id="deny-order-button" type="button" class="btn btn-success">Ok</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                <input id="deny-hidden" type="hidden" name="order-number" value="" />
+			</div>
+		</div>
+	</div>
+</div>
+<!--/Deny Modal-->
+
+<script type="text/javascript" src="libraries/jquery/jquery-2.0.3.min.js"></script>
+<script type="text/javascript" src="libraries/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/admin.js"></script>
+
+</body>
+</html>
