@@ -21,7 +21,8 @@ if (isset($_POST['action']) && isset($_POST['orderNumber'])) {
 						"amount" => $amount, // amount in cents, again
 						"currency" => "usd",
 						"card" => $token,
-						"description" => "Payment")
+						"description" => "FMF Payment"
+						)
 					);
 			} catch(Stripe_CardError $e) {
 			// The card has been declined

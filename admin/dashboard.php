@@ -104,8 +104,8 @@ include_once("php/admin-calls.php");
                         	<tr>
                             	<td>Zipcode</td>
                                 <td>Message</td>
-                                <td></td>
-                                <td></td>
+                                <td>Instructions</td>
+                                <td>Arrangement Selected</td>
                                 <td></td>
                             </tr>
                         </thead>
@@ -113,8 +113,8 @@ include_once("php/admin-calls.php");
                         	<tr>
                             	<td><?php echo $pending_orders['delivery_zipcode']; ?></td>
                                 <td><?php echo $pending_orders['personal_message']; ?></td>
-                                <td></td>
-                                <td></td>
+                                <td><?php echo $pending_orders['delivery_instructions']; ?></td>
+                                <td><?php echo $pending_orders['arrangement_code']; ?></td>
                                 <td></td>
                             </tr>
                         </tbody>
@@ -188,8 +188,8 @@ include_once("php/admin-calls.php");
                         	<tr>
                             	<td>Zipcode</td>
                                 <td>Message</td>
-                                <td></td>
-                                <td></td>
+                                <td>Instructions</td>
+                                <td>Arrangement Selected</td>
                                 <td></td>
                             </tr>
                         </thead>
@@ -197,8 +197,8 @@ include_once("php/admin-calls.php");
                         	<tr>
                             	<td><?php echo $processed_orders['delivery_zipcode']; ?></td>
                                 <td><?php echo $processed_orders['personal_message']; ?></td>
-                                <td></td>
-                                <td></td>
+                                <td><?php echo $processed_orders['delivery_instructions']; ?></td>
+                                <td><?php echo $processed_orders['arrangement_code']; ?></td>
                                 <td></td>
                             </tr>
                         </tbody>

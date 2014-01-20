@@ -202,3 +202,19 @@ if (isset($_POST["method"]) && $_POST["method"] == "write" && $_POST["action"] =
 }
 
 ?>
+
+<?php
+
+### Change email address from account page ###
+
+if (isset($_POST["method"]) && $_POST["method"] == "write" && $_POST["action"] == "update-email") {
+	$user_id = mysql_real_escape_string($_POST["userUuid"]);
+	$new_email = mysql_real_escape_string($_POST["updatedEmail"]);
+	
+	$update_query = "UPDATE user_info SET email = '{$new_email}' WHERE uuid = '{$user_id}'";
+	mysql_query($update_query);
+	
+	echo "ok";
+}
+
+?>
