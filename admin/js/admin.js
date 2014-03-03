@@ -73,3 +73,22 @@ $("#deny-order-button").click(function() {
 		location.reload();
 	});
 });
+
+$("#change-prices-button").click(function() {
+	var changeAmount = $("#change-prices").val();
+	var changeDir = $("#change-prices-select").val();
+	
+	$.post("php/admin-settings.php", {
+		method: "write",
+		action: "change-price",
+		changeNum: changeAmount,
+		changeDirection: changeDir 
+	}, function(data) {
+		ajaxData = $.trim(data);
+		if (ajaxData == "ok") {
+			$("#modal-price-change-confirm").modal("show");
+		} else {
+			alert("There was an error processing the request");
+		}
+	});
+});

@@ -211,6 +211,30 @@ include_once("php/admin-calls.php");
     </table>
 </div>
 
+<div class="container">
+    <div class="row margin-top-30">
+        <div class="col-sm-4">
+            <div>
+                <strong>Change Prices By Percentage:</strong>
+            </div>
+            <div class="row margin-top-10">
+            	<div class="col-sm-8">
+            		<input id="change-prices" type="text" class="form-control" placeholder="Example: 25" />
+                </div>
+                <div class="col-sm-4">
+                	<select id="change-prices-select" class="form-control">
+                    	<option value="up">Up</option>
+                        <option value="down">Down</option>
+                    </select>
+                </div>
+            </div>
+            <div class="margin-top-10 txt-center">
+            	<a id="change-prices-button" class="btn btn-primary">Do It</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--Accept Modal-->
 <div class="modal fade accept-modal" id="modal-accept" tabindex="-1" role="dialog">
 	<div class="modal-dialog">
@@ -252,6 +276,25 @@ include_once("php/admin-calls.php");
 	</div>
 </div>
 <!--/Deny Modal-->
+
+<!--Price Change Confirmation Modal-->
+<div class="modal fade" id="modal-price-change-confirm" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Confirmation</h4>
+			</div>
+			<div class="modal-body">
+				Prices were updated successfully.
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+			</div>
+		</div>
+	</div>
+</div>
+<!--/Price Change Confirmation Modal-->
 
 <!--Add Shipping Modal-->
 <div class="modal fade shipping-modal" id="modal-shipping" tabindex="-1" role="dialog">
